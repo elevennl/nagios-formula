@@ -27,11 +27,7 @@ include_dir={{nrpe_map.get('cfg_dir')}}
 #allow_weak_random_seed=1
 
 {%- if nrpe.nrpe_commands is defined %}
-{%- if nrpe.get('nrpe_commands') is mapping %}
-{%- for nrpe_command in nrpe.get('nrpe_commands').values() %}
-{{ nrpe_command }}
-{%- endfor %}
-{%- elif nrpe.get('nrpe_commands') is iterable %}
+{%- if nrpe.get('nrpe_commands') is iterable %}
 {%- for nrpe_command in nrpe.get('nrpe_commands') %}
 {{ nrpe_command }}
 {%- endfor %}
